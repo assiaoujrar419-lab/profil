@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio Pro</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+    scroll-behavior: smooth;
+  }
+
+  /* HEADER */
+  header {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #1e3a8a, #0f172a);
+  }
+
+  h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+  .typing {
+    font-size: 20px;
+    color: #38bdf8;
+    height: 25px;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #111827;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    color: #38bdf8;
+    transform: scale(1.1);
+  }
+
+  section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+    animation: fadeUp 1s ease-in;
+  }
+
+  @keyframes fadeUp {
+    from {opacity: 0; transform: translateY(40px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  .card {
+    background: #1f2937;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+    background: #273244;
+  }
+
+  /* SKILLS */
+  .skill {
+    margin: 10px 0;
+  }
+
+  .bar {
+    background: #334155;
+    height: 10px;
+    border-radius: 5px;
+  }
+
+  .progress {
+    height: 10px;
+    background: #38bdf8;
+    border-radius: 5px;
+  }
+
+  /* CONTACT BUTTON */
+  button {
+    padding: 10px 15px;
+    border: none;
+    background: #38bdf8;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #111827;
+    margin-top: 40px;
+  }
+
+  /* responsive */
+  @media(max-width: 600px){
+    h1 {font-size: 28px;}
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>👋 أنا أسية</h1>
+  <div class="typing" id="typing"></div>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    أنا طالبة كنطور مهاراتي فـ web development 💻  
+    كنخدم بـ HTML / CSS / JS
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+
+  <div class="card">
+    <div class="skill">HTML</div>
+    <div class="bar"><div class="progress" style="width:90%"></div></div>
+
+    <div class="skill">CSS</div>
+    <div class="bar"><div class="progress" style="width:80%"></div></div>
+
+    <div class="skill">JavaScript</div>
+    <div class="bar"><div class="progress" style="width:60%"></div></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3>📌 Project 1</h3>
+    <p>Landing page بسيطة</p>
+  </div>
+
+  <div class="card">
+    <h3>📌 Project 2</h3>
+    <p>To-do list app</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+
+  <div class="card">
+    <p>تقدر تتاصل بيا 👇</p>
+    <button onclick="alert('تم إرسال الرسالة!')">Send Message</button>
+  </div>
+</section>
+
+<footer>
+  © 2026 - Portfolio ديال أسية
+</footer>
+
+<script>
+  /* ✨ typing animation */
+  const text = "Web Developer 💻 | Front-End Learner";
+  let i = 0;
+
+  function typing(){
+    if(i < text.length){
+      document.getElementById("typing").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing, 80);
+    }
+  }
+
+  typing();
+</script>
+
+</body>
+</html>
